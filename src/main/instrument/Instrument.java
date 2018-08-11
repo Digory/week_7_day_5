@@ -13,7 +13,7 @@ public abstract class Instrument implements IPlay, ISell {
         this.category = category;
         this.colour = colour;
         this.priceBoughtFor = priceBoughtFor;
-        priceSoldFor = 1.5 * priceBoughtFor;
+        priceSoldFor = priceBoughtFor + calculateMarkup();
     }
 
     @Override

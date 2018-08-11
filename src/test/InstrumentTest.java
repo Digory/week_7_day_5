@@ -25,6 +25,11 @@ public class InstrumentTest {
     }
 
     @Test
+    public void getCategoryAsString_triangle(){
+        assertEquals("Percussion", triangle.getCategory().getString());
+    }
+
+    @Test
     public void getNumberOfStrings_guitar(){
         assertEquals(6, guitar.getNumberOfStrings());
     }

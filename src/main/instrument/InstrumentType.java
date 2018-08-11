@@ -12,7 +12,7 @@ public enum InstrumentType {
         this.category = category;
     }
 
-    public String getCategory() {
+    public String getString() {
         return category;
     }
 }

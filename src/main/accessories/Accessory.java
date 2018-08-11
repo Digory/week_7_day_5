@@ -12,7 +12,7 @@ public abstract class Accessory implements ISell {
     public Accessory(InstrumentType category, double priceBoughtFor) {
         this.category = category;
         this.priceBoughtFor = priceBoughtFor;
-        priceSoldFor = 3 * priceBoughtFor;
+        priceSoldFor = priceBoughtFor + calculateMarkup();
     }
 
     public InstrumentType getCategory() {
