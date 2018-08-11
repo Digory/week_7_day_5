@@ -52,4 +52,39 @@ public class ShopTest {
         shop.addToStock(sheetMusic);
         assertEquals(6, shop.getAllStock().size());
     }
+
+    @Test
+    public void removeItem_returns_true(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        boolean actual = shop.removeItem(triangle);
+        assertEquals(true, actual);
+    }
+
+    @Test
+    public void removeItem_returns_false(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        boolean actual = shop.removeItem(trumpet);
+        assertEquals(false, actual);
+    }
+
+    @Test
+    public void removeItem_removes_item(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.removeItem(triangle);
+        assertEquals(1, shop.getAllStock().size());
+    }
+
+    @Test
+    public void calculatePotentialProfit(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        assertEquals(39.5, shop.calculatePotentialProfit(), 0);
+    }
 }
