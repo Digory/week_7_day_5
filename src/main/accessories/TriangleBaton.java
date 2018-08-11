@@ -1,4 +1,10 @@
 package main.accessories;
 
-public class TriangleBaton {
+import main.instrument.InstrumentType;
+
+public class TriangleBaton extends Accessory{
+
+    public TriangleBaton(double priceBoughtFor) {
+        super(InstrumentType.PERCUSSION, priceBoughtFor);
+    }
 }
