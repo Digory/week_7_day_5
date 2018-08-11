@@ -4,8 +4,8 @@ public class Guitar extends Instrument{
 
     private int numberOfStrings;
 
-    public Guitar(ColourType colour, int numberOfStrings) {
-        super(InstrumentType.STRING, colour);
+    public Guitar(ColourType colour, int numberOfStrings, double priceBoughtFor) {
+        super(InstrumentType.STRING, colour, priceBoughtFor);
         this.numberOfStrings = numberOfStrings;
     }
 
