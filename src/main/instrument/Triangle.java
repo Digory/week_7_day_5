@@ -10,4 +10,9 @@ public class Triangle extends Instrument{
     public String play() {
         return "ding...";
     }
+
+    @Override
+    public String toString(){
+        return "INSTRUMENT: Triangle " + super.toString();
+    }
 }

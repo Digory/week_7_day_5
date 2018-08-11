@@ -1,13 +1,13 @@
 package main.instrument;
 
 public enum ColourType {
-    RED("Red"),
-    GREEN("Green"),
-    YELLOW("Yellow"),
-    BLUE("Blue"),
-    PINK("Pink"),
-    BLACK("Black"),
-    WHITE("White");
+    RED("red"),
+    GREEN("green"),
+    YELLOW("yellow"),
+    BLUE("blue"),
+    PINK("pink"),
+    BLACK("black"),
+    WHITE("white");
 
     private String colour;
 
@@ -15,7 +15,7 @@ public enum ColourType {
         this.colour = colour;
     }
 
-    public String getColour() {
+    public String getString() {
         return colour;
     }
 }

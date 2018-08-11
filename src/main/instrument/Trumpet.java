@@ -17,4 +17,9 @@ public class Trumpet extends Instrument{
     public String play() {
         return "MUHHHHHHHHHHHHHH";
     }
+
+    @Override
+    public String toString(){
+        return "INSTRUMENT: Trumpet " + super.toString();
+    }
 }

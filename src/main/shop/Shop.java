@@ -45,7 +45,7 @@ public class Shop {
         ArrayList<ISell> toBeRemoved = new ArrayList<>();
         for(ISell item : stock){
             if(item instanceof Instrument){
-                if(((Instrument) item).getCategory() == category){
+                if(item.getCategory() == category){
                     toBeRemoved.add(item);
                 }
             }
@@ -57,12 +57,30 @@ public class Shop {
         ArrayList<ISell> toBeRemoved = new ArrayList<>();
         for(ISell item : stock){
             if(item instanceof Accessory){
-                if(((Accessory) item).getCategory() == category){
+                if(item.getCategory() == category){
                     toBeRemoved.add(item);
                 }
             }
         }
         return stock.removeAll(toBeRemoved);
+    }
+
+    public String getListOfAllStock(){
+        String list = "";
+        for(ISell item : stock){
+            list += item.toString() + "\n";
+        }
+        return list;
+    }
+
+    public String getListOfAllStockInThisCategory(InstrumentType category){
+        String list = "";
+        for(ISell item : stock){
+            if(item.getCategory() == category){
+                list += item.toString() + "\n";
+            }
+        }
+        return list;
     }
 
 }

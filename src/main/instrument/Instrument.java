@@ -16,11 +16,6 @@ public abstract class Instrument implements IPlay, ISell {
         priceSoldFor = priceBoughtFor + calculateMarkup();
     }
 
-    @Override
-    public double calculateMarkup(){
-        return 0.5 * priceBoughtFor;
-    }
-
     public double getPriceBoughtFor() {
         return priceBoughtFor;
     }
@@ -29,12 +24,23 @@ public abstract class Instrument implements IPlay, ISell {
         return priceSoldFor;
     }
 
+    public ColourType getColour() {
+        return colour;
+    }
+
+    @Override
+    public double calculateMarkup(){
+        return 0.5 * priceBoughtFor;
+    }
+
+    @Override
     public InstrumentType getCategory() {
         return category;
     }
 
-    public ColourType getColour() {
-        return colour;
+    @Override
+    public String toString(){
+        return "COLOUR: " + getColour().getString() + " CATEGORY: " + getCategory().getString() + " PRICE: " + getPriceSoldFor();
     }
 
 }

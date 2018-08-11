@@ -15,10 +15,6 @@ public abstract class Accessory implements ISell {
         priceSoldFor = priceBoughtFor + calculateMarkup();
     }
 
-    public InstrumentType getCategory() {
-        return category;
-    }
-
     public double getPriceBoughtFor() {
         return priceBoughtFor;
     }
@@ -30,5 +26,15 @@ public abstract class Accessory implements ISell {
     @Override
     public double calculateMarkup(){
         return 2 * priceBoughtFor;
+    }
+
+    @Override
+    public InstrumentType getCategory() {
+        return category;
+    }
+
+    @Override
+    public String toString(){
+        return "CATEGORY: " + getCategory() + " PRICE: " + getPriceSoldFor();
     }
 }

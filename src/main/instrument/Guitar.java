@@ -17,4 +17,9 @@ public class Guitar extends Instrument{
     public String play() {
         return "Pling plong pling";
     }
+
+    @Override
+    public String toString(){
+        return "INSTRUMENT: Guitar " + super.toString();
+    }
 }

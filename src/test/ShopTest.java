@@ -218,4 +218,15 @@ public class ShopTest {
         shop.removeAllInThisCategory(InstrumentType.BRASS);
         assertEquals(4, shop.getAllStock().size());
     }
+
+    @Test
+    public void getListOfAllStock(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        assertEquals("", shop.getListOfAllStock());
+    }
 }
