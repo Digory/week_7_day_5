@@ -40,7 +40,7 @@ public abstract class Instrument implements IPlay, ISell {
 
     @Override
     public String toString(){
-        return "COLOUR: " + getColour().getString() + " CATEGORY: " + getCategory().getString() + " PRICE: " + getPriceSoldFor();
+        return "COLOUR: " + getColour().getString() + " CATEGORY: " + getCategory().getString() + " PRICE: £" + String.format("%.2f", getPriceSoldFor());
     }
 
 }

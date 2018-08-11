@@ -35,6 +35,6 @@ public abstract class Accessory implements ISell {
 
     @Override
     public String toString(){
-        return "CATEGORY: " + getCategory() + " PRICE: " + getPriceSoldFor();
+        return "CATEGORY: " + getCategory().getString() + " PRICE: £" + String.format("%.2f", getPriceSoldFor());
     }
 }

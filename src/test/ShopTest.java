@@ -227,6 +227,23 @@ public class ShopTest {
         shop.addToStock(plectrum);
         shop.addToStock(baton);
         shop.addToStock(sheetMusic);
-        assertEquals("", shop.getListOfAllStock());
+        assertEquals("INSTRUMENT: Guitar COLOUR: green CATEGORY: String PRICE: £19.50\n" +
+                "INSTRUMENT: Triangle COLOUR: blue CATEGORY: Percussion PRICE: £6.00\n" +
+                "INSTRUMENT: Trumpet COLOUR: white CATEGORY: Brass PRICE: £33.00\n" +
+                "ACCESSORY: Guitar plectrum CATEGORY: String PRICE: £1.50\n" +
+                "ACCESSORY: Triangle baton CATEGORY: Percussion PRICE: £4.50\n" +
+                "ACCESSORY: Trumpet sheet music CATEGORY: Brass PRICE: £24.00\n", shop.getListOfAllStock());
+    }
+
+    @Test
+    public void getListOfAllStockInThisCategory(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        assertEquals("INSTRUMENT: Trumpet COLOUR: white CATEGORY: Brass PRICE: £33.00\n" +
+                "ACCESSORY: Trumpet sheet music CATEGORY: Brass PRICE: £24.00\n", shop.getListOfAllStockInThisCategory(InstrumentType.BRASS));
     }
 }
