@@ -3,10 +3,7 @@ package test;
 import main.accessories.GuitarPlectrum;
 import main.accessories.TriangleBaton;
 import main.accessories.TrumpetSheetMusic;
-import main.instrument.ColourType;
-import main.instrument.Guitar;
-import main.instrument.Triangle;
-import main.instrument.Trumpet;
+import main.instrument.*;
 import main.shop.Shop;
 import org.junit.Before;
 import org.junit.Test;
@@ -86,5 +83,139 @@ public class ShopTest {
         shop.addToStock(baton);
         shop.addToStock(sheetMusic);
         assertEquals(39.5, shop.calculatePotentialProfit(), 0);
+    }
+
+    @Test
+    public void removeInstrumentsInThisCategory_returns_true(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        boolean actual = shop.removeInstrumentsInThisCategory(InstrumentType.BRASS);
+        assertEquals(true, actual);
+    }
+
+    @Test
+    public void removeInstrumentsInThisCategory_returns_false(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        boolean actual = shop.removeInstrumentsInThisCategory(InstrumentType.WOODWIND);
+        assertEquals(false, actual);
+    }
+
+    @Test
+    public void removeInstrumentsInThisCategory_removes_single_item(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        boolean actual = shop.removeInstrumentsInThisCategory(InstrumentType.BRASS);
+        assertEquals(5, shop.getAllStock().size());
+    }
+
+    @Test
+    public void removeInstrumentsInThisCategory_removes_multiple_items(){
+        shop.addToStock(guitar);
+        shop.addToStock(new Guitar(ColourType.RED, 6, 10.0));
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        boolean actual = shop.removeInstrumentsInThisCategory(InstrumentType.STRING);
+        assertEquals(5, shop.getAllStock().size());
+    }
+
+    @Test
+    public void removeAccessoriesInThisCategory_returns_true(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        boolean actual = shop.removeAccessoriesInThisCategory(InstrumentType.BRASS);
+        assertEquals(true, actual);
+    }
+
+    @Test
+    public void removeAccessoriesInThisCategory_returns_false(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        boolean actual = shop.removeAccessoriesInThisCategory(InstrumentType.WOODWIND);
+        assertEquals(false, actual);
+    }
+
+    @Test
+    public void removeAccessoriesInThisCategory_removes_single_item(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        shop.removeAccessoriesInThisCategory(InstrumentType.BRASS);
+        assertEquals(5, shop.getAllStock().size());
+    }
+
+    @Test
+    public void removeAccessoriesInThisCategory_removes_multiple_items(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(new GuitarPlectrum(1.0));
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        shop.removeAccessoriesInThisCategory(InstrumentType.STRING);
+        assertEquals(5, shop.getAllStock().size());
+    }
+
+    @Test
+    public void removeAllInThisCategory_returns_true(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        boolean actual = shop.removeAllInThisCategory(InstrumentType.BRASS);
+        assertEquals(true, actual);
+    }
+
+    @Test
+    public void removeAllInThisCategory_returns_false(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        boolean actual = shop.removeAllInThisCategory(InstrumentType.WOODWIND);
+        assertEquals(false, actual);
+    }
+
+    @Test
+    public void removeAllInThisCategory_removesItems(){
+        shop.addToStock(guitar);
+        shop.addToStock(triangle);
+        shop.addToStock(trumpet);
+        shop.addToStock(plectrum);
+        shop.addToStock(baton);
+        shop.addToStock(sheetMusic);
+        shop.removeAllInThisCategory(InstrumentType.BRASS);
+        assertEquals(4, shop.getAllStock().size());
     }
 }

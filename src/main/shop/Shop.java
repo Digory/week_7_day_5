@@ -42,29 +42,27 @@ public class Shop {
     }
 
     public boolean removeInstrumentsInThisCategory(InstrumentType category){
-        boolean anyRemoved = false;
+        ArrayList<ISell> toBeRemoved = new ArrayList<>();
         for(ISell item : stock){
             if(item instanceof Instrument){
                 if(((Instrument) item).getCategory() == category){
-                    stock.remove(item);
-                    anyRemoved = true;
+                    toBeRemoved.add(item);
                 }
             }
         }
-        return anyRemoved;
+        return stock.removeAll(toBeRemoved);
     }
 
     public boolean removeAccessoriesInThisCategory(InstrumentType category){
-        boolean anyRemoved = false;
+        ArrayList<ISell> toBeRemoved = new ArrayList<>();
         for(ISell item : stock){
             if(item instanceof Accessory){
                 if(((Accessory) item).getCategory() == category){
-                    stock.remove(item);
-                    anyRemoved = true;
+                    toBeRemoved.add(item);
                 }
             }
         }
-        return anyRemoved;
+        return stock.removeAll(toBeRemoved);
     }
 
 }
