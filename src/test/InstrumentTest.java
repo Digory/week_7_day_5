@@ -14,28 +14,43 @@ public class InstrumentTest {
 
     @Before
     public void before(){
-        guitar = new Guitar(ColourType.BLACK, 6);
-        triangle = new Triangle(ColourType.PINK);
-        trumpet = new Trumpet(ColourType.BLUE, 4);
+        guitar = new Guitar(ColourType.BLACK, 6, 30.0);
+        triangle = new Triangle(ColourType.PINK, 5.0);
+        trumpet = new Trumpet(ColourType.BLUE, 4, 50.0);
     }
 
     @Test
-    public void getCategoryReturnsCorrect(){
+    public void getCategory_guitar(){
         assertEquals(InstrumentType.STRING, guitar.getCategory());
     }
 
     @Test
-    public void getNumberOfStringsReturnsCorrect(){
+    public void getNumberOfStrings_guitar(){
         assertEquals(6, guitar.getNumberOfStrings());
     }
 
     @Test
-    public void getNumberOfValvesReturnsCorrect(){
+    public void getNumberOfValves_trumpet(){
         assertEquals(4, trumpet.getNumberOfValves());
     }
 
     @Test
-    public void playReturnsCorrect(){
+    public void play_triangle(){
         assertEquals("ding...", triangle.play());
+    }
+
+    @Test
+    public void calculateMarkup_trumpet(){
+        assertEquals(25.0, trumpet.calculateMarkup(),0);
+    }
+
+    @Test
+    public void getPriceBoughtFor_guitar(){
+        assertEquals(30.0, guitar.getPriceBoughtFor(), 0);
+    }
+
+    @Test
+    public void getPriceSoldFor_guitar(){
+        assertEquals(45.0, guitar.getPriceSoldFor(), 0);
     }
 }
