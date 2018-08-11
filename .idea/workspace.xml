@@ -13,6 +13,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/com_codeclan_week_07_weekend_homework$test_in_weekend_homework.ic" NAME="test in weekend_homework Coverage Results" MODIFIED="1534005653679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.*</FILTER>
+    </SUITE>
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-864925255">
       <usages-collector id="statistics.lifecycle.project">
@@ -261,7 +266,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534005643492" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534005845912" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -279,7 +284,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.test in weekend_homework">
+  <component name="RunManager" selected="JUnit.ShopTest.getListOfAllStockInThisCategory">
     <configuration name="ShopTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="weekend_homework" />
       <extension name="coverage">
@@ -365,9 +370,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ShopTest.getListOfAllStockInThisCategory" />
         <item itemvalue="JUnit.test in weekend_homework" />
         <item itemvalue="JUnit.ShopTest" />
-        <item itemvalue="JUnit.ShopTest.getListOfAllStockInThisCategory" />
         <item itemvalue="JUnit.ShopTest.getListOfAllStock" />
         <item itemvalue="JUnit.ShopTest.removeAccessoriesInThisCategory_removes_multiple_items" />
       </list>
